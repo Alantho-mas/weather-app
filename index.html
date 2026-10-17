@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Now — Simple Weather App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+        <header>
+            <h1>🌤️ Weather Now</h1>
+            <p class="subtitle">Live weather for any city. No sign-up, no API key.</p>
+        </header>
+
+        <section class="search" aria-label="Search for a city">
+            <input id="cityInput" type="text" placeholder="Search a city… e.g. Kochi" autocomplete="off" aria-label="City name">
+            <button id="searchBtn" type="button">Search</button>
+            <button id="locateBtn" type="button" title="Use my location" aria-label="Use my location">📍</button>
+        </section>
+
+        <p id="loading" class="loading hidden" role="status">Loading…</p>
+        <p id="error" class="error hidden" role="alert"></p>
+
+        <section id="currentCard" class="card current hidden" aria-label="Current weather">
+            <h2 id="cityName"></h2>
+            <div class="temp-row">
+                <span id="conditionEmoji" aria-hidden="true"></span>
+                <span id="temperature"></span>
+            </div>
+            <p id="conditionText" class="condition"></p>
+            <div class="details">
+                <div class="detail">
+                    <span class="label">Feels like</span>
+                    <strong id="feelsLike"></strong>
+                </div>
+                <div class="detail">
+                    <span class="label">Humidity</span>
+                    <strong id="humidity"></strong>
+                </div>
+                <div class="detail">
+                    <span class="label">Wind</span>
+                    <strong id="wind"></strong>
+                </div>
+            </div>
+        </section>
+
+        <section id="forecast" class="forecast hidden" aria-label="5-day forecast"></section>
+
+        <footer>
+            Weather data by <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a>
+        </footer>
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>
